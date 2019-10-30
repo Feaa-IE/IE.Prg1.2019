@@ -10,45 +10,50 @@ namespace IE.Prg1.Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Introduceti a");
-            double a = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Introduceti b");
-            double b = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Introduceti operatorul");
-            string op = Console.ReadLine();
-
-            double rezultat = 0;
-            bool opValida = true;
-            switch (op)
+            ConsoleKeyInfo keyInfo;
+            do
             {
-                case "+":
-                    rezultat = a + b;
-                    break;
-                case "-":
-                    rezultat = a - b;
-                    break;
-                case "*":
-                    rezultat = a * b;
-                    break;
-                case "/":
-                    rezultat = a / b;
-                    break;
-                default:
-                    opValida = false;
-                    break;
-            }
-            if (opValida)
-            {
-                Console.WriteLine($"{a}{op}{b}={rezultat}");
-            }
-            else
-            {
-                Console.WriteLine("Operatie invalida");
-            }
+                Console.WriteLine("Introduceti a");
+                double a = Convert.ToDouble(Console.ReadLine());
 
-            Console.ReadKey();
+                Console.WriteLine("Introduceti b");
+                double b = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Introduceti operatorul");
+                string op = Console.ReadLine();
+
+                double rezultat = 0;
+                bool opValida = true;
+                switch (op)
+                {
+                    case "+":
+                        rezultat = a + b;
+                        break;
+                    case "-":
+                        rezultat = a - b;
+                        break;
+                    case "*":
+                        rezultat = a * b;
+                        break;
+                    case "/":
+                        rezultat = a / b;
+                        break;
+                    default:
+                        opValida = false;
+                        break;
+                }
+                if (opValida)
+                {
+                    Console.WriteLine($"{a}{op}{b}={rezultat}");
+                }
+                else
+                {
+                    Console.WriteLine("Operatie invalida");
+                }
+
+                keyInfo = Console.ReadKey();
+            } 
+            while (keyInfo.Key == ConsoleKey.Escape);
         }
     }
 }

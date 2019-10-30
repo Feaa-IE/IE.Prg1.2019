@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.MedieNrPare", "IE.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.Rugby", "IE.Prg1.Rugby\IE.Prg1.Rugby.csproj", "{66973C4D-44D8-46DB-AF8E-B1376A738FD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.Problema1", "IE.Prg1.Problema1\IE.Prg1.Problema1.csproj", "{6F3462CF-6CE1-4F58-A048-1568BA77E018}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{66973C4D-44D8-46DB-AF8E-B1376A738FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66973C4D-44D8-46DB-AF8E-B1376A738FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66973C4D-44D8-46DB-AF8E-B1376A738FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3462CF-6CE1-4F58-A048-1568BA77E018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3462CF-6CE1-4F58-A048-1568BA77E018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3462CF-6CE1-4F58-A048-1568BA77E018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3462CF-6CE1-4F58-A048-1568BA77E018}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
