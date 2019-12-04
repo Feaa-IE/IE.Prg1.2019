@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IE.Prg1.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,13 +20,37 @@ namespace IE.Prg1.EqGrad2
 
         private void uxButtonRezolva_Click(object sender, EventArgs e)
         {
+            double a;
+            bool valid = double.TryParse(uxTextBoxA.Text, out a);
+            if (!valid){
+                MessageBox.Show("a invalid! Trebuie sa fie un numar!");
+                uxTextBoxA.Clear();
+                uxTextBoxA.Focus();
+                return;
+            }
 
-            double a = double.Parse(uxTextBoxA.Text);
-            double b = double.Parse(uxTextBoxB.Text);
-            double c = double.Parse(uxTextBoxC.Text);
+            double b;
+            valid = double.TryParse(uxTextBoxB.Text, out b);
+            if (!valid)
+            {
+                MessageBox.Show("b invalid! Trebuie sa fie un numar!");
+                uxTextBoxB.Clear();
+                uxTextBoxB.Focus();
+                return;
+            }
+
+            double c;
+            valid = double.TryParse(uxTextBoxC.Text, out c);
+            if (!valid)
+            {
+                MessageBox.Show("c invalid! Trebuie sa fie un numar!");
+                uxTextBoxC.Clear();
+                uxTextBoxC.Focus();
+                return;
+            }
 
             bool areInfinitateSolutii;
-            double[] solutiiEq = EqGrad2(a, b, c, out areInfinitateSolutii);
+            double[] solutiiEq = FunctiiMat.EqGrad2(a, b, c, out areInfinitateSolutii);
 
             if (areInfinitateSolutii)
             {
@@ -45,48 +70,7 @@ namespace IE.Prg1.EqGrad2
             }
         }
 
-        private double[] EqGrad2(double a, double b, double c, out bool infinitateSolutii)
-        {
-            double[] solutii = new double[0];
-            infinitateSolutii = false;
-            if (a == 0 && b == 0 && c == 0)
-            {
-                infinitateSolutii = true;
-                return solutii;
-            }
-            if (a == 0 && b == 0)
-            {
-                return solutii;
-            }
-
-            if (a == 0)
-            {
-                Array.Resize(ref solutii, 1);
-                solutii[0] = -c / b;
-                return solutii;
-            }
-
-            double delta;
-            delta = b * b - 4 * a * c;
-
-            if(delta > 0)
-            {
-
-                Array.Resize(ref solutii, 2);
-                solutii[0] = (-b + Math.Sqrt(delta)) / 2 * a;
-                solutii[1] = (-b - Math.Sqrt(delta)) / 2 * a;
-                return solutii;
-            }
-
-            if(delta == 0)
-            {
-                Array.Resize(ref solutii, 2);
-                solutii[0] = solutii[1] = -b  / 2 * a;
-                return solutii;
-            }
-
-            return solutii;
-        }
+       
 
 
     }
