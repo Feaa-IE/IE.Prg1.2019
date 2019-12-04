@@ -30,7 +30,7 @@
         {
             this.uxPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uxTextBoxNume = new System.Windows.Forms.TextBox();
             this.uxButtonAdauga = new System.Windows.Forms.Button();
             this.uxListBoxNume = new System.Windows.Forms.ListBox();
             this.uxPanelSorteaza = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,7 +38,7 @@
             this.uxButtonSorteaza = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.uxButtonCauta = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.uxTextBoxCauta = new System.Windows.Forms.TextBox();
             this.uxPanelMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.uxPanelSorteaza.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.uxTextBoxNume, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.uxButtonAdauga, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -79,13 +79,14 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 34);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // uxTextBoxNume
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(707, 20);
-            this.textBox1.TabIndex = 0;
+            this.uxTextBoxNume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxTextBoxNume.Location = new System.Drawing.Point(3, 7);
+            this.uxTextBoxNume.Name = "uxTextBoxNume";
+            this.uxTextBoxNume.Size = new System.Drawing.Size(707, 20);
+            this.uxTextBoxNume.TabIndex = 0;
+            this.uxTextBoxNume.KeyUp += new System.Windows.Forms.KeyEventHandler(this.uxTextBoxNume_KeyUp);
             // 
             // uxButtonAdauga
             // 
@@ -96,6 +97,7 @@
             this.uxButtonAdauga.TabIndex = 1;
             this.uxButtonAdauga.Text = "Adauga";
             this.uxButtonAdauga.UseVisualStyleBackColor = true;
+            this.uxButtonAdauga.Click += new System.EventHandler(this.uxButtonAdauga_Click);
             // 
             // uxListBoxNume
             // 
@@ -136,6 +138,7 @@
             this.uxButtonSorteaza.TabIndex = 1;
             this.uxButtonSorteaza.Text = "Sorteaza";
             this.uxButtonSorteaza.UseVisualStyleBackColor = true;
+            this.uxButtonSorteaza.Click += new System.EventHandler(this.uxButtonSorteaza_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -143,7 +146,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.uxButtonCauta, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.uxTextBoxCauta, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 413);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -162,13 +165,13 @@
             this.uxButtonCauta.Text = "Cauta";
             this.uxButtonCauta.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // uxTextBoxCauta
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(3, 7);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(707, 20);
-            this.textBox2.TabIndex = 1;
+            this.uxTextBoxCauta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxTextBoxCauta.Location = new System.Drawing.Point(3, 7);
+            this.uxTextBoxCauta.Name = "uxTextBoxCauta";
+            this.uxTextBoxCauta.Size = new System.Drawing.Size(707, 20);
+            this.uxTextBoxCauta.TabIndex = 1;
             // 
             // Form1
             // 
@@ -193,7 +196,7 @@
 
         private System.Windows.Forms.TableLayoutPanel uxPanelMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox uxTextBoxNume;
         private System.Windows.Forms.Button uxButtonAdauga;
         private System.Windows.Forms.ListBox uxListBoxNume;
         private System.Windows.Forms.FlowLayoutPanel uxPanelSorteaza;
@@ -201,7 +204,7 @@
         private System.Windows.Forms.Button uxButtonSorteaza;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button uxButtonCauta;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox uxTextBoxCauta;
     }
 }
 

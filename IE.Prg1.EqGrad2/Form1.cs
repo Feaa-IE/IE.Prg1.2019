@@ -21,31 +21,24 @@ namespace IE.Prg1.EqGrad2
         private void uxButtonRezolva_Click(object sender, EventArgs e)
         {
             double a;
-            bool valid = double.TryParse(uxTextBoxA.Text, out a);
-            if (!valid){
-                MessageBox.Show("a invalid! Trebuie sa fie un numar!");
-                uxTextBoxA.Clear();
-                uxTextBoxA.Focus();
+            bool valid = Convert(uxTextBoxA, "a", out a);
+            if (!valid)
+            {
                 return;
             }
 
             double b;
-            valid = double.TryParse(uxTextBoxB.Text, out b);
+            valid = Convert(uxTextBoxB, "b", out b);
             if (!valid)
             {
-                MessageBox.Show("b invalid! Trebuie sa fie un numar!");
-                uxTextBoxB.Clear();
-                uxTextBoxB.Focus();
                 return;
             }
 
             double c;
-            valid = double.TryParse(uxTextBoxC.Text, out c);
+            valid = Convert(uxTextBoxC, "c", out c);
             if (!valid)
             {
-                MessageBox.Show("c invalid! Trebuie sa fie un numar!");
-                uxTextBoxC.Clear();
-                uxTextBoxC.Focus();
+
                 return;
             }
 
@@ -56,11 +49,11 @@ namespace IE.Prg1.EqGrad2
             {
                 MessageBox.Show("Ecuatia are o infinitate de solutii");
             }
-            else if( solutiiEq.Length == 0)
+            else if (solutiiEq.Length == 0)
             {
                 MessageBox.Show("Ecuatia nu are solutii");
             }
-            else if(solutiiEq.Length == 1)
+            else if (solutiiEq.Length == 1)
             {
                 MessageBox.Show("Ecuatia este de gradul 1. Solutia este:" + solutiiEq[0]);
             }
@@ -69,8 +62,21 @@ namespace IE.Prg1.EqGrad2
                 MessageBox.Show("Ecuatia este de gradul 2. Solutiile sunt:" + solutiiEq[0] + "," + solutiiEq[1]);
             }
         }
+        private bool Convert(TextBox txt, string numeVar, out double valoare)
+        {
+            bool valid;
+            valid = double.TryParse(txt.Text, out valoare);
+            if (!valid)
+            {
+                MessageBox.Show(numeVar + " invalid! Trebuie sa fie un numar!");
+                txt.Clear();
+                txt.Focus();
 
-       
+            }
+            return valid;
+
+        }
+
 
 
     }

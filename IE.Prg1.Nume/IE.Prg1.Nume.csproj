@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IE.Prg1.Util\IE.Prg1.Util.csproj">
+      <Project>{6669f7a2-f2eb-455a-af1a-24c90516c6b6}</Project>
+      <Name>IE.Prg1.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
