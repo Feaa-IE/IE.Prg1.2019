@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.Util", "IE.Prg1.Uti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.Nume", "IE.Prg1.Nume\IE.Prg1.Nume.csproj", "{CDF23E55-CE4E-4EDA-8900-6556B3375FB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Prg1.Albume", "IE.Prg1.Albume\IE.Prg1.Albume.csproj", "{8934B6AE-A509-4EFC-B9C3-B6DAF1B46831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{CDF23E55-CE4E-4EDA-8900-6556B3375FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF23E55-CE4E-4EDA-8900-6556B3375FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF23E55-CE4E-4EDA-8900-6556B3375FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8934B6AE-A509-4EFC-B9C3-B6DAF1B46831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8934B6AE-A509-4EFC-B9C3-B6DAF1B46831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8934B6AE-A509-4EFC-B9C3-B6DAF1B46831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8934B6AE-A509-4EFC-B9C3-B6DAF1B46831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
