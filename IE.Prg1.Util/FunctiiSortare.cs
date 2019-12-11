@@ -14,16 +14,7 @@ namespace IE.Prg1.Util
             {
                 int j = i - 1;
                 string temp = toSort[i];
-                bool conditie;
-                if (desc)
-                {
-                    conditie = toSort[j].CompareTo(temp) < 0;
-                }
-                else
-                {
-                    conditie = toSort[j].CompareTo(temp) > 0;
-                }
-                while (j >= 0 && conditie)
+                while (j >= 0 && (desc ? toSort[j].CompareTo(temp) < 0 : toSort[j].CompareTo(temp) > 0))
                 {
                     toSort[j + 1] = toSort[j];
                     j--;

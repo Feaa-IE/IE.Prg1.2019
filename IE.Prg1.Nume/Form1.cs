@@ -64,7 +64,40 @@ namespace IE.Prg1.Nume
 
             uxListBoxNume.Items.Clear();
             uxListBoxNume.Items.AddRange(listNume);
+        }
 
+        private void uxButtonCauta_Click(object sender, EventArgs e)
+        {
+            int min = 0;
+            int max = uxListBoxNume.Items.Count;
+            int mijloc = (min + max) / 2;
+            var gasit = false;
+            while (min < max)
+            {
+                string nume = uxListBoxNume.Items[mijloc].ToString();
+                if (nume.CompareTo(uxTextBoxCauta.Text) == 0)
+                {
+                    gasit = true;
+                    break;
+                }
+                else if (uxCheckBoxDescrescator.Checked ? nume.CompareTo(uxTextBoxCauta.Text) < 0 : nume.CompareTo(uxTextBoxCauta.Text) > 0)
+                {
+                    max = mijloc;
+                }
+                else
+                {
+                    min = mijloc;
+                }
+                mijloc = (min + max) / 2;
+            }
+            if (gasit)
+            {
+                MessageBox.Show("Valoarea a fost gasita la pozitia " + mijloc);
+            }
+            else
+            {
+                MessageBox.Show("Valoarea nu se afla in lista!");
+            }
         }
     }
 }

@@ -164,6 +164,7 @@
             this.uxButtonCauta.TabIndex = 0;
             this.uxButtonCauta.Text = "Cauta";
             this.uxButtonCauta.UseVisualStyleBackColor = true;
+            this.uxButtonCauta.Click += new System.EventHandler(this.uxButtonCauta_Click);
             // 
             // uxTextBoxCauta
             // 
