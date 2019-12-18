@@ -82,11 +82,11 @@ namespace IE.Prg1.Nume
                 }
                 else if (uxCheckBoxDescrescator.Checked ? nume.CompareTo(uxTextBoxCauta.Text) < 0 : nume.CompareTo(uxTextBoxCauta.Text) > 0)
                 {
-                    max = mijloc;
+                    max = mijloc + 1;
                 }
                 else
                 {
-                    min = mijloc;
+                    min = mijloc - 1;
                 }
                 mijloc = (min + max) / 2;
             }

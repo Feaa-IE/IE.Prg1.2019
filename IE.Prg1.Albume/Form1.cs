@@ -55,6 +55,30 @@ namespace IE.Prg1.Albume
         private void uxComboBoxAlbume_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Vladimir\Documents\FEAA Cursuri\Programare1\2019\IE.Prg1\BD\GestAlbume.accdb;Persist Security Info=False;";
+            try
+            {
+                conn.Open();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Nu s-a putut realiza conexiunea la baza de date!" + ex.Message);
+            }
+
+            OleDbCommand select = new OleDbCommand();
+            select.Connection = conn;
+            select.CommandText = "select * from Albume where ID=@id";
+            select.Parameters.AddWithValue("id", (int)uxComboBoxAlbume.SelectedValue);
+            OleDbDataReader reader = select.ExecuteReader();
+            reader.Read();
+
+            uxTextBoxInv.Text = reader["ID"].ToString();
+            uxTextBoxArtist.Text = reader["Artist"].ToString();
+            uxTextBoxDenumire.Text = reader["Denumire"].ToString();
+            uxTextBoxPret.Text = reader["Pret"].ToString();
+            uxComboBoxSuport.Text = reader["Suport"].ToString();
+            uxDateTimePickerData.Value = reader.GetDateTime(1);
         }
     }
 }
