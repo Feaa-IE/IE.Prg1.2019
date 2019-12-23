@@ -99,6 +99,7 @@
             this.uxButtonSterge.TabIndex = 1;
             this.uxButtonSterge.Text = "Sterge";
             this.uxButtonSterge.UseVisualStyleBackColor = true;
+            this.uxButtonSterge.Click += new System.EventHandler(this.uxButtonSterge_Click);
             // 
             // uxButtonNou
             // 
@@ -108,6 +109,7 @@
             this.uxButtonNou.TabIndex = 2;
             this.uxButtonNou.Text = "Adauga nou";
             this.uxButtonNou.UseVisualStyleBackColor = true;
+            this.uxButtonNou.Click += new System.EventHandler(this.uxButtonNou_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -246,6 +248,12 @@
             // 
             this.uxComboBoxSuport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uxComboBoxSuport.FormattingEnabled = true;
+            this.uxComboBoxSuport.Items.AddRange(new object[] {
+            "CD",
+            "Vinil",
+            "Caseta",
+            "Blue-Ray",
+            "DVD"});
             this.uxComboBoxSuport.Location = new System.Drawing.Point(70, 209);
             this.uxComboBoxSuport.Name = "uxComboBoxSuport";
             this.uxComboBoxSuport.Size = new System.Drawing.Size(469, 21);
@@ -259,6 +267,7 @@
             this.uxButtonSalveaza.TabIndex = 12;
             this.uxButtonSalveaza.Text = "Salveaza";
             this.uxButtonSalveaza.UseVisualStyleBackColor = true;
+            this.uxButtonSalveaza.Click += new System.EventHandler(this.uxButtonSalveaza_Click);
             // 
             // Form1
             // 
